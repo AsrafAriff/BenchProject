@@ -14,7 +14,6 @@ public class PetServiceImpl implements PetService{
     PetRepo petRepo;
     @Override
     public String addPet(Pet pet) {
-        pet.setStatus("Available");
         petRepo.save(pet);
         return "Added Successfully\n\n" + pet.toString();
     }

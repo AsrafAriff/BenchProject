@@ -13,6 +13,9 @@ public class Inventory {
     @Column(name = "Inventory_Id")
     private int inventoryId;
 
+    @Column(name = "Pet_id")
+    private String petId;
+
     @Column(name = "Pet_type")
     private String petType;
 

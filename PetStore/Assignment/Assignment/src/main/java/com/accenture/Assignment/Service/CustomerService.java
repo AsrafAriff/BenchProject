@@ -11,9 +11,6 @@ public interface CustomerService
     ResponseEntity<?> getCustomerDetails (String Id);
 
     String addCustomer (Customer customer);
-
-    Pet getPet (String Id);
-
     List<Customer> getAllCustomer();
 
 }

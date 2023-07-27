@@ -24,13 +24,8 @@ public class CustomerController
     {
         return customerService.getAllCustomer();
     }
-    @GetMapping("get-pet/{custId}")
-    public Pet getPet(@PathVariable(value = "custId")String Id)
-    {
-        return customerService.getPet(Id);
-    }
 
-    @PostMapping("create-order")
+    @PostMapping("add-customer")
     public String addCustomer (@RequestBody Customer customer)
     {
         return customerService.addCustomer(customer);

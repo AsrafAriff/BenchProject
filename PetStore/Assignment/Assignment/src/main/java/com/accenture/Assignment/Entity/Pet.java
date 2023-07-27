@@ -1,31 +1,35 @@
 package com.accenture.Assignment.Entity;
 
+import com.accenture.Assignment.Entity.Customer;
+import com.accenture.Assignment.Entity.Inventory;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Pet")
+@Table(name = "pet")
 @Data
-public class Pet
-{
+public class Pet {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Pet_Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pet_id")
     private int petId;
 
-    @Column(name = "Pet_type")
-    private String petType;
-
-    @Column(name = "Pet_name")
+    @Column(name = "pet_name", length = 100)
     private String petName;
 
-    @Column(name = "Pet_Colour")
-    private String petColour;
+    @Column(name = "availability")
+    private boolean availability;
 
-    @Column(name = "Status")
-    private String status;
+    // Define the many-to-one relationship with the Customer entity
+    @ManyToOne
+    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
+    private Customer customer;
 
-    @Column(name = "Owner")
-    private String owner;
+    // Define the many-to-one relationship with the Inventory entity
+    @ManyToOne
+    @JoinColumn(name = "inventory_id", referencedColumnName = "inventory_id")
+    private Inventory inventory;
+
 }
