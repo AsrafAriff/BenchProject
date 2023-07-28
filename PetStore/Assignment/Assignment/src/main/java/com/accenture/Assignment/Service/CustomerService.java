@@ -12,7 +12,6 @@ public interface CustomerService
 
     String addCustomer (Customer customer);
 
-    Pet getPet (String Id);
 
     List<Customer> getAllCustomer();
 

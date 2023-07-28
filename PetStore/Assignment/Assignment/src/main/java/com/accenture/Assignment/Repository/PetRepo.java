@@ -13,6 +13,6 @@ public interface PetRepo extends JpaRepository<Pet,Integer>
 {
     Pet getBypetId (int Id);
 
-    @Query ("SELECT p FROM Pet p WHERE p.status = :status")
-    List<Pet> getAvailablePets (@Param("status") String status);
+    @Query ("SELECT p FROM Pet p WHERE p.availability = :availability")
+    List<Pet> getAvailablePets (@Param("availability") String availability);
 }

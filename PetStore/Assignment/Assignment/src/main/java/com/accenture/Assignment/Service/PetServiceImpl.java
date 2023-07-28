@@ -14,20 +14,15 @@ public class PetServiceImpl implements PetService{
     PetRepo petRepo;
     @Override
     public String addPet(Pet pet) {
-        pet.setStatus("Available");
         petRepo.save(pet);
         return "Added Successfully\n\n" + pet.toString();
     }
 
     @Override
-    public List<Pet> getAvailablePet(String status) {
-        return petRepo.getAvailablePets(status);
+    public List<Pet> getAvailablePet(String availability) {
+        return petRepo.getAvailablePets(availability);
     }
 
-    @Override
-    public Boolean checkExistence(int Id) {
-        return true;
-    }
 
     @Override
     public String updatePet(int Id, Pet pet) {

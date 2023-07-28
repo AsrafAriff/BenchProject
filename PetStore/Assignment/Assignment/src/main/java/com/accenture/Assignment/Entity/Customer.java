@@ -13,12 +13,9 @@ import javax.persistence.Table;
 public class Customer
 {
     @Id
-    @Column(name = "customer_Id")
+    @Column(name = "customer_id")
     private String custId;
 
-    @Column(name = "customer_Name")
+    @Column(name = "customer_name")
     private String custName;
-
-    @Column(name = "pet_Id")
-    private int petId;
 }

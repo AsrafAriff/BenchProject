@@ -11,21 +11,22 @@ public class Pet
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Pet_Id")
+    @Column(name = "pet_Id")
     private int petId;
 
-    @Column(name = "Pet_type")
-    private String petType;
 
-    @Column(name = "Pet_name")
+    @Column(name = "pet_name")
     private String petName;
 
-    @Column(name = "Pet_Colour")
-    private String petColour;
 
-    @Column(name = "Status")
-    private String status;
+    @Column(name = "availability")
+    private String availability;
 
-    @Column(name = "Owner")
-    private String owner;
+   @ManyToOne
+   @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
+   private Customer customer;
+
+   @ManyToOne
+   @JoinColumn(name = "inventory_id", referencedColumnName = "inventory_id")
+   private Inventory inventory;
 }

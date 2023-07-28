@@ -21,9 +21,9 @@ public class PetController
     }
 
     @GetMapping("get-status/{status}")
-    public List<Pet> getAvailablePet (@PathVariable String status)
+    public List<Pet> getAvailablePet (@PathVariable String availability)
     {
-        return petService.getAvailablePet(status);
+        return petService.getAvailablePet(availability);
     }
 
     @PutMapping("update-pet/{petId}")

@@ -11,6 +11,6 @@ public interface InventoryRepo extends JpaRepository<Inventory,Integer> {
 
     Inventory getByInventoryId (int Id);
 
-    @Query("SELECT p FROM Pet p WHERE p.status = :status")
-    List<Inventory> getInventory (@Param("status") String status);
+    @Query("SELECT p FROM Pet p WHERE p.availability = :availability")
+    List<Inventory> getInventory (@Param("availability") String availability);
 }

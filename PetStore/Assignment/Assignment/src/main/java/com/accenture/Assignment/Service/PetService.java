@@ -9,9 +9,8 @@ public interface PetService
 {
     String addPet(Pet pet);
 
-    List<Pet> getAvailablePet(String status);
+    List<Pet> getAvailablePet(String availability);
 
-    Boolean checkExistence(int Id);
 
     String updatePet (int Id, Pet pet);
 
